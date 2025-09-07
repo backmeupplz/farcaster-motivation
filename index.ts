@@ -2,6 +2,7 @@ import * as cron from 'node-cron'
 import { createReadStream } from 'fs'
 import { join } from 'path'
 import csv from 'csv-parser'
+import publishCast from './publishCast'
 
 interface Quote {
   author: string
@@ -46,14 +47,17 @@ async function main() {
   console.log(`Loaded ${quotes.length} quotes`)
 
   // Schedule cron job
-  cron.schedule('* * * * * *', () => {
+  cron.schedule('0 */8 * * *', () => {
     const randomQuote = getRandomQuote(quotes)
     const formattedQuote = formatQuote(randomQuote)
-    console.log(formattedQuote)
+    return publishCast(formattedQuote)
   })
+  const randomQuote = getRandomQuote(quotes)
+  const formattedQuote = formatQuote(randomQuote)
+  await publishCast(formattedQuote)
 
   console.log(
-    'Quote cron job started. A random quote will be displayed every second.'
+    'Quote cron job started. A random quote will be displayed every 8 hours.'
   )
   console.log('Press Ctrl+C to stop.')
 

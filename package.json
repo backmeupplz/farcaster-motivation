@@ -10,7 +10,11 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@farcaster/hub-nodejs": "^0.15.6",
     "csv-parser": "^3.2.0",
-    "node-cron": "^4.2.1"
+    "dotenv": "^17.2.2",
+    "envalid": "^8.1.0",
+    "node-cron": "^4.2.1",
+    "viem": "^2.37.4"
   }
 }

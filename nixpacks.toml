@@ -1,0 +1,10 @@
+[phases.install]
+cmds = ["bun install"]
+nixLibs = ["openssl"]
+
+[phases.setup]
+nixPkgs = ["...","python311"]
+aptPkgs = ["...", "openssh-client", "build-essential"]
+
+[start]
+cmd = "bun run index.ts"
