@@ -59,12 +59,6 @@ async function main() {
   console.log(
     'Quote cron job started. A random quote will be displayed every 8 hours.'
   )
-  console.log('Press Ctrl+C to stop.')
-
-  // Display an initial quote
-  const initialQuote = getRandomQuote(quotes)
-  console.log('\nInitial quote:')
-  console.log(formatQuote(initialQuote))
 }
 
 main().catch(console.error)
