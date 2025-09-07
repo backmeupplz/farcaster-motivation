@@ -1,0 +1,16 @@
+{
+  "name": "farcaster-motivation",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "node-cron": "^4.2.1"
+  }
+}
